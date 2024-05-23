@@ -525,8 +525,8 @@ if __name__ == "__main__":
     
         m, std = calculate_mean_sigma_from_parm_file(parm_file_name[:-4]+"/"+parm_file_name)
 
-        sig_name = json_file_path.split('/')[-1][:-5]+".csv"
-        sig_name = sig_name.replace(".", "_")
+        sig_name = json_file_path.split('/')[-1][:-5]
+        sig_name = sig_name.replace(".", "_")+".csv"
         create_sigma_mean_file(sig_name)
         append_parameters_to_sigma_file(sig_name, hdf5_file_name, m, std)
         plot_mean_sig_values_with_errors(sig_name)
